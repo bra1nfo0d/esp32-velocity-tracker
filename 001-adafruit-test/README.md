@@ -1,14 +1,18 @@
 # Adafruit Test
 
-Im Abschnitt `001-adafruit-test` wird der **Adafruit ADXL343** Accelerometer getestet.
+Im Abschnitt `001-adafruit-test` werden die ersten Daten des **Adafruit ADXL343** Accelerometer erfasst. Ziel ist es ein ersten Einblick ueber die Werte zu bekommen.
 
-## Durchfuehrung
+## Uebersicht
 
-Der **Adafruit ADCL343** wird an den **ESP32** angeschlossen. Dies bietet den ersten Einblick welche Werte der Accelerometer ausgibt. Damit kann spaeter bestimmt werden wie der *Offset-Fehler* und *Skalierungs-Fehler* aussieht.
+Datei / Ordner|Beschreibung
+-|-
+`adafruit-test.ino`|Sketch fuer das auslesen der Werte des **ADXL343** Accelerometer
+`adafruit-werte-ruhezustand.csv`|Werte die der **ADXL343** ausgegeben mit dem Sketch ausgegeben hat
+`bilder/`|Bilder von Aufbau und Schaltplan
 
-## Aufbau
+## Bilder
 
-### Prototyp:
+### Hardware-Umsetzung
 
 ![Testaufbau](bilder/001-adafruit-test-aufbau.jpeg)
 
@@ -16,8 +20,9 @@ Der **Adafruit ADCL343** wird an den **ESP32** angeschlossen. Dies bietet den er
 
 ![Schaltplan](bilder/001-adafruit-test-schaltplan.png)
 
-## Ergebnisse
-
-Die Werte des **Adafruit ADCL343** befinden sich im Ordner `./bilder`. Dort sind einmal Werte mit und ohne Bewegung aufgenommen.
-
 ## Fazit
+
+Anhand der Werte die der **ADXL343** ausgibt, laesst sich ablesen das der Sensor noch kalibriert werden muss. Das erkennt man daran das der Beschleunigungswert, im Stillstand, die x- und y-Achse weit von der 0 m/s^2 weg sind. Auch muesste die z-Achse eine Beschleunigung von rund 9,81 m/s^2 haben, von welcher sie noch weit entfernt ist.
+
+---
+**Naechster Abschnitt**: Die Kalibrierung des **ADXL343**.
