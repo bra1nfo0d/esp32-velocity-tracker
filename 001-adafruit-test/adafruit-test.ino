@@ -5,8 +5,7 @@
 const unsigned long INTERVALL_US = 10000; // 10 ms (100 Messungen pro Sekunde)
 unsigned long naechsteMessung;
 
-// Sensor-Objekt
-Adafruit_ADXL343 accel = Adafruit_ADXL343(12345);
+Adafruit_ADXL343 accel = Adafruit_ADXL343(12345); // 10000 μs = 10 ms (100 Messungen pro Sekunde)
 
 void setup() {
   Serial.begin(115200);
@@ -15,8 +14,7 @@ void setup() {
     Serial.println("ADXL343 nicht gefunden");
     while (true) delay(10);
   }
-  // Messbereich
-  accel.setRange(ADXL343_RANGE_8_G);
+  accel.setRange(ADXL343_RANGE_8_G); // Messbereich des ADXL343
   naechsteMessung = micros();
 }
 
