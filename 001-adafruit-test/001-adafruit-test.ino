@@ -17,13 +17,15 @@ void setup() {
 }
 
 void loop() {
+  unsigned long currentTimestamp = millis();
   sensors_event_t event;
   // Umrechnung Sensordaten in m/s^2
   accel.getEvent(&event);
 
-  Serial.print("x:");  Serial.print(event.acceleration.x);
-  Serial.print(",y:"); Serial.print(event.acceleration.y);
-  Serial.print(",z:"); Serial.println(event.acceleration.z);
+  Serial.print(currentTimestamp);
+  Serial.print(","); Serial.print(event.acceleration.x);
+  Serial.print(","); Serial.print(event.acceleration.y);
+  Serial.print(","); Serial.println(event.acceleration.z);
 
   delay(40);
 }
